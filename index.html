@@ -4,25 +4,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WikiSpace</title>
+    <meta name="theme-color" content="#101827">
+    <meta name="description" content="WikiSpace — свободная интернет-энциклопедия.">
+    <title>WikiSpace — Энциклопедия</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header>
-    <h1>🌐 WikiSpace</h1>
-    <p>Свободная энциклопедия</p>
+
+<header class="topbar">
+    <div class="brand">
+        <span class="logo">🌐</span>
+        <div>
+            <h1>WikiSpace</h1>
+            <small>Свободная энциклопедия</small>
+        </div>
+    </div>
+
+    <button id="themeToggle" class="theme-btn" aria-label="Сменить тему">☀️</button>
 </header>
 
-<div class="search">
-    <input id="search" placeholder="Поиск статей...">
-    <button onclick="searchArticles()">Найти</button>
-</div>
+<div class="layout">
 
-<main>
-    <h2>Популярные статьи</h2>
-    <div id="articles"></div>
-    <div id="content"></div>
-</main>
+    <aside class="sidebar">
+        <h3>НАВИГАЦИЯ</h3>
+        <button class="nav-btn active" data-category="Все">🏠 Главная</button>
+        <button class="nav-btn" data-category="Наука">🔬 Наука</button>
+        <button class="nav-btn" data-category="Космос">🚀 Космос</button>
+        <button class="nav-btn" data-category="История">🏛️ История</button>
+        <button class="nav-btn" data-category="Технологии">💻 Технологии</button>
+
+        <div class="sidebar-info">
+            <b>WikiSpace 2.0</b>
+            <p>Знания доступны каждому!</p>
+        </div>
+    </aside>
+
+    <main>
+        <section class="welcome">
+            <span class="welcome-label">МИР ЗНАНИЙ</span>
+            <h2>Открой для себя<br>новые знания.</h2>
+            <p>Исследуй мир, изучай историю, науку и технологии.</p>
+
+            <div class="search">
+                <input id="search" type="search"
+                    placeholder="🔎 Найти статью...">
+                <button id="searchBtn">Найти</button>
+            </div>
+        </section>
+
+        <section class="articles-section">
+            <div class="section-heading">
+                <div>
+                    <span class="section-label">БИБЛИОТЕКА</span>
+                    <h2 id="sectionTitle">Популярные статьи</h2>
+                </div>
+                <span id="articleCount" class="count"></span>
+            </div>
+
+            <div id="articles" class="articles-grid"></div>
+        </section>
+
+        <section id="content" class="article-view"></section>
+
+        <footer>
+            <h3>🌐 WikiSpace</h3>
+            <p>Свободная интернет-энциклопедия</p>
+            <p>WikiSpace © 2026</p>
+        </footer>
+    </main>
+
+</div>
 
 <script src="script.js"></script>
 </body>
